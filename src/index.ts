@@ -1,4 +1,4 @@
-import { Email } from "./email";
-import { EmailVerifier } from "./verifier";
+import { Email } from "./email.js";
+import { EmailVerifier } from "./verifier.js";
 
 export { Email, EmailVerifier };
