@@ -4,13 +4,18 @@ on:
   release:
     types: [published]
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+
 jobs:
   publish-gpr:
     name: "Publish to GitHub Package Registry"
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
@@ -30,9 +35,6 @@ jobs:
   publish-npm:
     name: "Publish to npm"
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2

@@ -12,6 +12,13 @@ on:
           - minor
           - patch
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+permissions:
+  contents: read
+  packages: read
+
 jobs:
   bump-version:
     name: Bump version
