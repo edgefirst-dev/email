@@ -4,6 +4,7 @@
 	"include": ["src/*.ts"],
 	"exclude": ["src/*.test.ts"],
 	"compilerOptions": {
+		"types": ["@cloudflare/workers-types"],
 		"outDir": "./build"
 	}
 }
